@@ -1,0 +1,59 @@
+.ChatMessage {
+    margin: 0 16px 16px 16px;
+}
+
+.MessageHeader {
+    display: flex;
+    flex-direction: row;
+}
+
+.Username {
+    font-size: 10px;
+    color: rgba(0,0,0,.3);
+    font-weight: 600;
+}
+
+.Time {
+	position:absolute;
+	margin-top:10%;
+    font-size: 10px;
+    color: rgba(0,0,0,.3);
+    font-weight: 300;
+}
+
+.Message {
+	margin-left:20%;
+	margin-right:20%;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    background-color: blue;
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 6px;
+    padding: 16px 16px 16px 16px;
+
+}
+.avatar{
+	position:absolute;
+	margin-left:5%;
+	border-radius: 75%;
+	height:10%;
+	width:10%;
+}
+.ChatMessage button{
+	margin-left:50%;
+}
+.count{
+	width: 100%;
+    height: 100%;
+    padding: 25px 25px 25px 25px;
+    word-break: break-word;
+    border:none;
+    background-color: rgba(229, 229, 229, 1);
+    font-size: 14px;
+    font-weight: 300;
+    color: blue;
+    border-radius: 2px;
+}

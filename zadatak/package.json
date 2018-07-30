@@ -2,10 +2,14 @@
   "name": "zadatak",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "react-scripts": "^1.0.14"
+  },
   "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react": "^16.0.0",
+    "react-apollo": "^1.4.16",
+    "react-dom": "^16.0.0",
+    "subscriptions-transport-ws": "0.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
