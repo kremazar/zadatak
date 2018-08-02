@@ -10,13 +10,13 @@ import {
 import {SubscriptionClient, addGraphQLSubscriptions} from 'subscriptions-transport-ws'
 
 
-const graphQLEndpoint = `https://api.graph.cool/simple/v1/cjk8vje678uav01475q09kqdl`
+const graphQLEndpoint = `https://api.graph.cool/simple/v1/cjk6q089l50s50158ypg4nhni`
 
 const networkInterface = createNetworkInterface({
   uri: graphQLEndpoint
 })
 
-const subscriptionsUrl = ` wss://subscriptions.graph.cool/v1/cjk8vje678uav01475q09kqdl`
+const subscriptionsUrl = ` wss://subscriptions.graph.cool/v1/cjk6q089l50s50158ypg4nhni`
 
 const subscriptionsClient = new SubscriptionClient(subscriptionsUrl, {
   reconnect: true,

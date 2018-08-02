@@ -1,4 +1,6 @@
+# This file contains the GraphQL Types
 
+# All types need to have the three fields id, updatedAt and createdAt like this:
 
 type Person @model {
   id: ID! @isUnique
@@ -8,7 +10,7 @@ type Person @model {
   messages: [Message!]! @relation(name: "UserMessages")
 }
 
-type Message @model{
+type Message @model {
   id: ID! @isUnique
   createdAt: DateTime!
   updatedAt: DateTime!  
@@ -17,4 +19,15 @@ type Message @model{
 }
 
 
+# Graphcool has one special type, the File type:
 
+# type File implements Node {
+#   contentType: String!
+#   createdAt: DateTime!
+#   id: ID! @isUnique
+#   name: String!
+#   secret: String! @isUnique
+#   size: Int!
+#   updatedAt: DateTime!
+#   url: String! @isUnique
+# }

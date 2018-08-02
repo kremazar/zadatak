@@ -1,80 +1,47 @@
 import React, { Component} from 'react'
 import '../styles/ChatMessage.css'
 import slika from './slika.jpg'; 
+import olovka from './olovka.jpg'; 
 import { graphql, gql, compose } from 'react-apollo'
+import Chat from './Chat'
 
 class ChatMessage extends Component {
+	
 
+  
   render() {
 	
-     var date = new Date().getDate();
-      var month = new Date().getMonth() + 1;
-      var year = new Date().getFullYear();
-	   var hours = new Date().getHours();
-	    var minutes = new Date().getMinutes();
-		var ago = date + '-' + month + '-' + year + ' ' + hours + ':' + minutes;
-		
-		
+	var date= this.props.time.toString();
+	var date1 = date.slice(0,10);
+	var date2 = date.slice(12,19);
+	var total = date1 + ' ' + date2;
+	
     return (
 		
       <div className='ChatMessage'>
+	  <button onClick={this.handleDelete}>X</button>
+			<button><img src={olovka} className="olovka" alt="olovka" /></button>
         <div className='MessageHeader'>
 			<img src={slika} className="avatar" alt="avatar" />
           <div className='Username'>{this.props.username}</div>
-          <div className='Time'>({ago})</div>
+          <div className='Time'>{total}</div>
         </div>
   <div className='Message'>{this.props.message} 
-			<button onClick={this.handleDelete}>X</button>
-			<button>UPDATE</button>
+			
 		</div>
 		
       </div>
     )
   }
 
-handleDelete = () => {
-	
-    this.props.deleteMessageMutation({variables: {id: this.props.messageQueryMutation.Message.id}})
-    
+handleDelete = async () => {
+    await this.props.deleteMessageMutation({variables: {id: this.props.messageQueryMutation.Message.id}})
+  
   }
 }
-const MESSAGE_QUERY = gql`
-  query MessageQuery($id: ID!) {
-    Message(id: $id) {
-      id
-    	text
-    	sentBy{
-        name
-      }
-    }
-  }
-`
-const DELETE_MESSAGE = gql`
-mutation DeleteMessage($id:ID!){
-  deleteMessage(id:$id){
-    id
-  }
-}
-`
 
 
 
-//const DetailPageWithGraphQL = compose(
- // graphql(MESSAGE_QUERY, {
- //   name: 'messageQueryMutation',
-    // see documentation on computing query variables from props in wrapper
-    // http://dev.apollodata.com/react/queries.html#options-from-props
-   // options: ({match}) => ({
-    //  variables: {
-     //   id: match.params.id,
-   //   },
-   // }),
- // }),
- // graphql(DELETE_MESSAGE, {
- //   name: 'deleteMessageMutation'
- // })
-//)(ChatMessage)
 
-//const DetailPageWithDelete = graphql(DELETE_MESSAGE)(DetailPageWithGraphQL)
 
-export default (ChatMessage)
+export default ChatMessage

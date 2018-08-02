@@ -3,7 +3,7 @@ import '../styles/ChatMessages.css'
 import ChatMessage from './ChatMessage'
 
 class ChatMessages extends Component {
-
+	
   render() {
    
     return (
@@ -11,9 +11,10 @@ class ChatMessages extends Component {
         {this.props.messages.map((message, i) => {
           return (<ChatMessage
             key={i}
-            message={message.text}
-            username={message.sentBy ? message.sentBy.name : 'Anonymous'}
+            message={message.text} 
+            username={message.sentBy.name}
             time={message.createdAt}
+			messages={this.props.messages}
           />)
         })}
         <div style={ {float:"left", clear: "both"} }

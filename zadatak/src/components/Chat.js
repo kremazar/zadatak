@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../styles/Chat.css'
 import ChatInput from './ChatInput'
 import ChatMessages from './ChatMessages'
+import Count from './Count'
 import { graphql, gql, compose } from 'react-apollo'
 
 const newMessageSubscription = gql`
@@ -45,9 +46,14 @@ class Chat extends Component {
   render() {
     return (
       <div className='Chat'>
+		<Count
+		 messages={this.props.allMessagesQuery.allMessages || []}
+          endRef={this._endRef}
+        />
         <ChatMessages
           messages={this.props.allMessagesQuery.allMessages || []}
           endRef={this._endRef}
+		  
         />
         <ChatInput
           message={this.state.message}
@@ -55,13 +61,14 @@ class Chat extends Component {
           onResetText={() => this.setState({message: ''})}
           onSend={this._onSend}
         />
+		
+		  
       </div>
     )
   }
 
   _onSend = () => {
-	  console.log('Send:${this.state.message}')
-    this.props.createMessageMutation({
+	     this.props.createMessageMutation({
       variables: {
         text: this.state.message,
         sentById: this.props.userId
@@ -116,7 +123,29 @@ const createMessage = gql`
   }
 `
 
+const MESSAGE_QUERY = gql`
+ query MessageQuery($id: ID!) {
+   Message(id: $id) {
+     id
+   	text
+  	sentBy{
+      name
+     }
+  }
+ }
+`
+const DELETE_MESSAGE = gql`
+mutation DeleteMessage($id:ID!){
+  deleteMessage(id:$id){
+   id
+  }
+}
+`
+
+
 export default compose(
   graphql(createMessage, {name : 'createMessageMutation'}),
-  graphql(allMessages, {name: 'allMessagesQuery'})
+  graphql(allMessages, {name: 'allMessagesQuery'}),
+  //graphql(MESSAGE_QUERY, {name : 'messageQueryMutation'}),
+  //graphql(DELETE_MESSAGE, {name: 'deleteMessageMutation'})
 )(Chat)
