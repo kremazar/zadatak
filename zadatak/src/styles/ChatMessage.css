@@ -1,53 +1,51 @@
 .ChatMessage {
-    margin: 0 16px 16px 16px;
+  margin: 0 16px 16px 16px;
 }
 
 .MessageHeader {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .Username {
-    font-size: 10px;
-    color: gray;
+  font-size: 10px;
+  color: gray;
 }
 
 .Time {
-	margin-left:5%;
-    font-size: 10px;
-    color: gray;
-	left:10%;
+  margin-left: 5%;
+  font-size: 10px;
+  color: gray;
+  left: 10%;
 }
 
 .Message {
-	margin top:10%;
-	margin-left:20%;
-	margin-right:20%;
-    display: flex;
-    align-items: center;
-    border-radius: 2px;
-    background-color: rgba(150, 202, 237, 1);
-    color: white;
-    font-size: 13px;
-    font-weight: 400;
-    margin-top: 6px;
-    padding: 15px;
+  margin-left: 20%;
+  margin-right: 20%;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  background-color: rgba(150, 202, 237, 1);
+  color: white;
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 6px;
+  padding: 20px;
 }
- .avatar{
-	 position:relative;
-	left: 20px; 
-	margin-left:1%;
-	border-radius: 75%;
-	height:10%;
-	width:10%;
+.avatar {
+  position: relative;
+  left: 20px;
+  margin-left: 1%;
+  border-radius: 75%;
+  height: 10%;
+  width: 10%;
 }
-.ChatMessage button{
-	position:relative;
-	left:64%;
-	bottom:50px;
-	
+.ChatMessage button {
+  position: relative;
+  left: 64%;
+  top: 120px;
 }
-.olovka{
-	height:10px;
-	width:10px;
+.olovka {
+  height: 10px;
+  width: 10px;
 }

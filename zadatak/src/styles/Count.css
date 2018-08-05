@@ -1,11 +1,11 @@
-.Count{
-	width: 94%;
-    height: 8%;
-    padding: 25px;
-    border:none;
-    background-color: rgba(150, 202, 237, 1);
-    font-size: 14px;
-    font-weight: 300;
-    color: rgba(0,0,0,.6);
-    border-radius: 2px;
+.Count {
+  width: 94%;
+  height: 8%;
+  padding: 25px;
+  border: none;
+  background-color: rgba(150, 202, 237, 1);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
 }

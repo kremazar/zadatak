@@ -1,24 +1,11 @@
-import React, { Component } from 'react'
-import '../styles/Count.css'
-import ChatMessage from './ChatMessage'
-import ChatMessages from './ChatMessages'
-import Chat from './Chat'
+import React, { Component } from "react";
+import "../styles/Count.css";
 class Count extends Component {
-
-
   render() {
- 
     return (
-	<div className="Count">
-	{
-		<p>{this.props.messages.length}    Items </p>
-	}
-	</div>
-    )
+      <div className="Count">{<p>{this.props.messages.length} Items </p>}</div>
+    );
   }
 }
 
-
-
-
-export default Count
+export default Count;
